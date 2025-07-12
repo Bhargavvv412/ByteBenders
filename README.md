@@ -8,12 +8,11 @@
 - [📚 Overview](#-overview)
 - [🌟 Features](#-key-features)
 - [📂 Project Structure](#-project-structure)
-- [🧑‍💻 Tech Stack](#-tech-stack)
-- [⚙️ How to Use](#️-how-to-use)
+<!-- - [⚙️ How to Use](#️-how-to-use)
 - [🧾 Requirements](#-requirements)
 - [🚀 Deployment](#-deployment)
 - [🤝 Contributing](#-contributing)
-- [📃 License](#-license)
+- [📃 License](#-license) -->
 
 ---
 
@@ -74,8 +73,8 @@ ReWear/
 ├── templates/
 │   ├── Base.html
 │   ├── Login.html
-    ├── Sign.html
-    └── Navbar.html
+|    ├── Sign.html
+|    └── Navbar.html
 │
 ├── Config.py
 ├── db_config.py
