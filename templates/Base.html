@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ReWear – Community Clothing Exchange</title>
+  <meta http-equiv="refresh" content="120;url={{ url_for('login') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #fdfbfb, #ebedee);
+      color: #2c3e50;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6C5CE7, #00B894);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    header h1 a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    header h1 a:hover {
+      color: #ffeaa7;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .nav-buttons a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #ffffff;
+      color: #2d3436;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    main {
+      padding: 130px 30px 50px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #6C5CE7, #00B894);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .subtext {
+      font-size: 16px;
+      color: #636e72;
+      margin-bottom: 40px;
+    }
+
+    .items-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .item-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      padding: 18px;
+      width: 220px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .item-card:nth-child(2) { animation-delay: 0.2s; }
+    .item-card:nth-child(3) { animation-delay: 0.4s; }
+    .item-card:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .item-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.4s ease;
+    }
+
+    .item-card:hover img {
+      transform: scale(1.07);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .item-card h3 {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #34495e;
+      font-weight: 600;
+    }
+
+    .item-card p {
+      font-size: 14px;
+      color: #636e72;
+    }
+
+    .redirect-note {
+      margin-top: 50px;
+      font-style: italic;
+      color: #b2bec3;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-buttons {
+        margin-top: 15px;
+      }
+
+      .items-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <body>
+  {% include 'navbar.html' %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+
+  <main>
+    <h2>Explore Fresh Swaps</h2>
+    <p class="subtext">Some community favorites, handpicked for you!</p>
+
+    <div class="items-container">
+      <!-- Casual Shirt -->
+      <div class="item-card">
+        <img src="{{ url_for('static', filename='uploads/Casual Shirt.jpg') }}" alt="Casual Shirt">
+        <h3>Casual Shirt</h3>
+        <p>Men | Like New</p>
+      </div>
+
+      <!-- Floral Dress -->
+      <div class="item-card">
+        <img src="{{ url_for('static', filename='uploads/dress.jpg') }}" alt="Floral Dress">
+        <h3>Floral Dress</h3>
+        <p>Women | New</p>
+      </div>
+
+      <!-- Men's T-Shirt -->
+      <div class="item-card">
+        <img src="{{ url_for('static', filename='uploads/mens tshirt.jpg') }}" alt="T-Shirt">
+        <h3>Graphic T-Shirt</h3>
+        <p>Men | Gently Used</p>
+      </div>
+
+      <!-- Unisex Jacket -->
+      <div class="item-card">
+        <img src="{{ url_for('static', filename='uploads/unisex.jpg') }}" alt="Unisex">
+        <h3>Windbreaker Jacket</h3>
+        <p>Unisex | Good Condition</p>
+      </div>
+    </div>
+
+    <p class="redirect-note">You will be automatically redirected to the login page in 2 minutes...</p>
+  </main>
+</body>
+</html>
