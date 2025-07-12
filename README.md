@@ -1,5 +1,22 @@
 # 👚 ReWear – Community Clothing Exchange
 
+
+---
+
+## 📌 Table of Contents
+
+- [📚 Overview](#-overview)
+- [🌟 Features](#-key-features)
+- [📂 Project Structure](#-project-structure)
+- [🧑‍💻 Tech Stack](#-tech-stack)
+- [⚙️ How to Use](#️-how-to-use)
+- [🧾 Requirements](#-requirements)
+- [🚀 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [📃 License](#-license)
+
+---
+
 # Overview: 
 Develop ReWear, a web-based platform that enables users to exchange unused clothing 
 through direct swaps or a point-based redemption system. The goal is to promote sustainable 
@@ -43,6 +60,30 @@ discarding them.
 - Approve or reject item listings
 - Remove spam or inappropriate content
 - Lightweight interface for admins to monitor listings
+
+---
+
+###📂 Project Structure
+
+```
+ReWear/
+│
+├── Static/
+│   └── Uploads/
+│
+├── templates/
+│   ├── Base.html
+│   ├── Login.html
+    ├── Sign.html
+    └── Navbar.html
+│
+├── Config.py
+├── db_config.py
+├── DATABASE.txt
+├── app.py
+├── README.md
+└── requirements.txt
+```
 
 ---
 
