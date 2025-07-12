@@ -1,4 +1,4 @@
-# 👚 ReWear – Swap, Save, Sustain
+# 👚 ReWear – Community Clothing Exchange
 
 ReWear is a web-based platform that makes it easy for users to exchange unused clothes. You can either swap directly with others or redeem clothing using points. The main goal is to encourage sustainable fashion and reduce textile waste by reusing wearable garments.
 
@@ -45,6 +45,18 @@ ReWear is a web-based platform that makes it easy for users to exchange unused c
 ## 💡 Why ReWear?
 
 Fast fashion is creating massive waste. Many of us have perfectly wearable clothes sitting in our wardrobes. ReWear gives these clothes a second life. Whether you're swapping with someone or using points to claim an item, you're helping reduce textile waste in a meaningful way.
+
+---
+
+## 🚀 Tech Stack (Example – Modify Based on Your Build)
+
+- *Frontend*: React / HTML-CSS / Tailwind
+- *Backend*: Node.js + Express
+- *Database*: MongoDB / Firebase
+- *Auth*: Firebase Auth / JWT
+- *Hosting*: Vercel / Netlify / Render
+
+---
 
 ## 🛠️ How to Run Locally
 
