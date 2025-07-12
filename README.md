@@ -73,8 +73,8 @@ ReWear/
 ├── templates/
 │   ├── Base.html
 │   ├── Login.html
-|    ├── Sign.html
-|    └── Navbar.html
+|   ├── Sign.html
+|   └── Navbar.html
 │
 ├── Config.py
 ├── db_config.py
