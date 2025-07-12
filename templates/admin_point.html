@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard-container">
+  <h2 style="text-align:center;">Manage User Points</h2>
+  <table border="1" cellpadding="10" cellspacing="0" style="width:100%; text-align:center;">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Points</th>
+      <th>Update</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.points }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('update_points', user_id=user.id) }}">
+          <input type="number" name="points" placeholder="Enter points" required>
+          <button type="submit">Update</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

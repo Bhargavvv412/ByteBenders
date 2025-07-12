@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 style="text-align:center; margin-bottom: 30px;">Admin Panel – Review Listings</h2>
+<a href="{{ url_for('admin_points') }}" class="admin-button">Manage User Points</a>
+
+
+<div class="item-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+  {% for item in items %}
+    <div class="item-card" style="width: 300px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 16px; text-align: center;">
+      <img src="{{ url_for('static', filename='uploads/' ~ item.image_filename) }}" style="width: 100%; border-radius: 8px;">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+      <p><strong>Category:</strong> {{ item.category }}</p>
+      <p><strong>Posted by:</strong> {{ item.email }}</p>
+
+      <div style="margin-top: 12px;">
+        <a href="{{ url_for('approve_item', item_id=item.id) }}" style="padding: 6px 12px; background: #4CAF50; color: white; border-radius: 6px; text-decoration: none; margin-right: 8px;">Approve</a>
+        <a href="{{ url_for('reject_item', item_id=item.id) }}" style="padding: 6px 12px; background: #f44336; color: white; border-radius: 6px; text-decoration: none;">Reject</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- Pagination -->
+<div style="text-align:center; margin-top: 40px;">
+  {% if page > 1 %}
+    <a href="{{ url_for('admin_panel', page=page-1) }}" style="margin-right: 15px;">&laquo; Previous</a>
+  {% endif %}
+  Page {{ page }} of {{ total_pages }}
+  {% if page < total_pages %}
+    <a href="{{ url_for('admin_panel', page=page+1) }}" style="margin-left: 15px;">Next &raquo;</a>
+  {% endif %}
+</div>
+
+{% endblock %}
