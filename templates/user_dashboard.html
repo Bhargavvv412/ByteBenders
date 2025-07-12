@@ -1,0 +1,162 @@
+<!-- {% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %} -->
+
+<style>
+  body {
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .dashboard-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .profile-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .profile-card h2 {
+    color: #6C5CE7;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .profile-card p {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .item-section h3 {
+    color: #00B894;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .item-card {
+    width: 220px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+
+  .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .item-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .item-card h4 {
+    margin: 10px 0 5px;
+    color: #2d3436;
+    font-size: 18px;
+  }
+
+  .item-card p {
+    font-size: 14px;
+    color: #636e72;
+  }
+
+  .add-item-form {
+    margin-top: 50px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+  }
+
+  .add-item-form h3 {
+    color: #6C5CE7;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .add-item-form input,
+  .add-item-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .add-item-form button {
+    background: linear-gradient(135deg, #6C5CE7, #00B894);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .add-item-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+</style>
+
+<div class="dashboard-container">
+  <div class="profile-card">
+    <h2>Welcome, {{ user.name }}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+  </div>
+
+  <div class="add-item-form">
+    <h3>Add a New Item</h3>
+    <form action="{{ url_for('add_item', user_id=user.id) }}" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Item Name" required>
+      <textarea name="description" placeholder="Item Description" required></textarea>
+
+      <!-- ✅ Category Dropdown -->
+      <select name="category" required
+        style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;">
+        <option value="">-- Select Category --</option>
+        <option value="Casual Shirt">Casual Shirt</option>
+        <option value="Dress Women">Dress Women</option>
+        <option value="T-Shirt Men">T-Shirt Men</option>
+        <option value="Unisex">Unisex</option>
+      </select>
+
+      <input type="file" name="image" accept="image/*" required>
+      <button type="submit">Add Item</button>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
