@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %}
+
+<style>
+  .dashboard-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+  }
+
+  .dashboard-container h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #6C5CE7;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .item-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .item-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  .item-card h4 {
+    font-size: 20px;
+    color: #2d3436;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .item-card p {
+    font-size: 14px;
+    color: #636e72;
+    margin-bottom: 6px;
+  }
+
+  .no-items {
+    text-align: center;
+    font-size: 18px;
+    color: #b2bec3;
+    margin-top: 50px;
+  }
+
+  .request-button {
+    background-color: #6C5CE7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+  }
+
+  .request-button:hover {
+    background-color: #5a4fcf;
+  }
+
+  @media (max-width: 768px) {
+    .item-card {
+      width: 90%;
+    }
+  }
+</style>
+
+<div class="dashboard-container">
+  <h2>Items in Category: {{ category }}</h2>
+
+  {% if items %}
+    <div class="item-list">
+      {% for item in items %}
+        <div class="item-card">
+          <img src="{{ url_for('static', filename='uploads/' ~ item.image_filename) }}" alt="{{ item.name }}">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.description }}</p>
+          <p><strong>Category:</strong> {{ item.category }}</p>
+          <p><strong>Posted by:</strong> {{ item.poster_email }}</p>
+
+          {% if session.user_id and item.poster_id != session.user_id %}
+            <form action="{{ url_for('request_item', item_id=item.id) }}" method="POST">
+              <button type="submit" class="request-button">Request</button>
+            </form>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="no-items">No items found in this category.</p>
+  {% endif %}
+</div>
+
+{% endblock %}
