@@ -8,11 +8,7 @@
 - [📚 Overview](#-overview)
 - [🌟 Features](#-key-features)
 - [📂 Project Structure](#-project-structure)
-<!-- - [⚙️ How to Use](#️-how-to-use)
-- [🧾 Requirements](#-requirements)
-- [🚀 Deployment](#-deployment)
-- [🤝 Contributing](#-contributing)
-- [📃 License](#-license) -->
+- [💡 Why ReWear?](#-why-rewear)
 
 ---
 
@@ -71,10 +67,16 @@ ReWear/
 │   └── Uploads/
 │
 ├── templates/
+|   ├── admin_panel.html
+|   ├── admin_point.html
 │   ├── Base.html
+|   ├── filtered_items.html
+|   ├── income_requests.html
 │   ├── Login.html
-|   ├── Sign.html
-|   └── Navbar.html
+|   ├── my_requests.html
+|   ├── Navbar.html
+|   ├── Signup.html
+|   └── User_dashboard.html
 │
 ├── Config.py
 ├── db_config.py
@@ -91,14 +93,3 @@ ReWear/
 Fast fashion is creating massive waste. Many of us have perfectly wearable clothes sitting in our wardrobes. ReWear gives these clothes a second life. Whether you're swapping with someone or using points to claim an item, you're helping reduce textile waste in a meaningful way.
 
 ---
-
-## 🚀 Tech Stack (Example – Modify Based on Your Build)
-Adding soon
----
-
-## 🛠️ How to Run Locally
-
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/rewear.git
-cd rewear

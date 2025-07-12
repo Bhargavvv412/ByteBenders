@@ -1,0 +1,3 @@
+Falsk==3.1.1
+Flask-Bcrypt==1.0.1
+dbconfig==0.3.2
