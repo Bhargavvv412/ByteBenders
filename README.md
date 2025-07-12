@@ -49,13 +49,7 @@ Fast fashion is creating massive waste. Many of us have perfectly wearable cloth
 ---
 
 ## 🚀 Tech Stack (Example – Modify Based on Your Build)
-
-- *Frontend*: React / HTML-CSS / Tailwind
-- *Backend*: Node.js + Express
-- *Database*: MongoDB / Firebase
-- *Auth*: Firebase Auth / JWT
-- *Hosting*: Vercel / Netlify / Render
-
+Adding soon
 ---
 
 ## 🛠️ How to Run Locally
