@@ -62,7 +62,7 @@ discarding them.
 
 ---
 
-###📂 Project Structure
+## 📂 Project Structure
 
 ```
 ReWear/
